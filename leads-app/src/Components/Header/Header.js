@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, NavItem, Icon, TextInput, CardPanel } from "react-materialize";
+import { Navbar, NavItem, Icon, TextInput, CardPanel, SideNav, SideNavItem } from "react-materialize";
 import { Animated } from "react-animated-css";
 import "./header.css";
 
@@ -14,7 +14,8 @@ const Header = props => {
     //     }
     // }
 
-    let searchClass = "hideSearch"
+    let searchClass = "hideSearch";
+    let searchIcon = "search";
 
     const SearchDropDown = () => {
         return (
@@ -23,8 +24,9 @@ const Header = props => {
             className={searchClass}
             >
                 <CardPanel>
+                    <Icon >search</Icon>
                     <TextInput
-                        icon="search"
+                        // icon="search"
                         placeholder="Search"
                     />
                 </CardPanel>
@@ -43,9 +45,11 @@ const Header = props => {
     if (!searchDrop) {
         // searchStyle.search.visibility = "hidden";
         searchClass = "hideSearch";
+        searchIcon = "search";
     } else {
         // searchStyle.search.visibility = "visible";
         searchClass = "showSearch";
+        searchIcon = "close";
     }
 
 
@@ -65,7 +69,7 @@ const Header = props => {
                     onOpenEnd: null,
                     onOpenStart: null,
                     outDuration: 200,
-                    preventScrolling: true
+                    preventScrolling: true,
                 }}
             >
                 <NavItem href="#">
@@ -74,14 +78,14 @@ const Header = props => {
                 <NavItem href="#">
                     Categories
             </NavItem>
-                <NavItem href="#"
+                <NavItem className="sidenav-close" href="#"
                     onClick={() => searchSwitch()}
                 >
-                    <Icon>search</Icon>
+                    <Icon>{searchIcon}</Icon>
                 </NavItem>
             </Navbar>
             <Animated
-                animationIn="zoomIn" animationOut="zoomOut" isVisible={searchDrop} animationInDuration={500} animationOutDuration={500}
+                animationIn="bounceInRight" animationOut="zoomOut" isVisible={searchDrop} animationInDuration={500} animationOutDuration={500}
             >
             <SearchDropDown />
             </Animated>
