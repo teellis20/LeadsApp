@@ -1,4 +1,4 @@
-Deployed site https://teellis20.github.io/LeadsApp/
+Deployed site https://leads-w-cte.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
