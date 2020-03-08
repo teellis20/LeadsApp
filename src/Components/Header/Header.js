@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, NavItem, Icon, TextInput, CardPanel, SideNav, SideNavItem } from "react-materialize";
+import { Navbar, NavItem, Icon, TextInput, CardPanel, Button } from "react-materialize";
 import { Animated } from "react-animated-css";
 import "./header.css";
 
@@ -24,11 +24,12 @@ const Header = props => {
             className={searchClass}
             >
                 <CardPanel>
-                    <Icon >search</Icon>
-                    <TextInput
-                        // icon="search"
+                    <TextInput id="searchInput"
                         placeholder="Search"
                     />
+                    <Button id="searchBttn">
+                 <Icon id="searchRight">search</Icon>
+                 </Button>
                 </CardPanel>
             </div>
         )
