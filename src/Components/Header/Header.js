@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Navbar, NavItem, Icon, TextInput, CardPanel, Button } from "react-materialize";
 import { Animated } from "react-animated-css";
 import "./header.css";
+import colors from "../../constants/colors";
 
 const Header = props => {
 
@@ -57,9 +58,10 @@ const Header = props => {
     return (
         <div>
             <Navbar
+                // className="chec"
                 alignLinks="right"
                 brand={<a
-                    className="brand-logo" href="#">Name Goes Here</a>}
+                    className="brand-logo" href="#">Business Right</a>}
                 menuIcons={<Icon>menu</Icon>}
                 options={{
                     draggable: true,
@@ -71,6 +73,7 @@ const Header = props => {
                     onOpenStart: null,
                     outDuration: 200,
                     preventScrolling: true,
+                    centerLogo: true
                 }}
             >
                 <NavItem href="#">
@@ -94,10 +97,10 @@ const Header = props => {
     )
 };
 
-// const styles = {
-//     navLogo: {
-//         marginLeft: '2%'
-//     }
-// }
+const styles = {
+    header: {
+        backgroundColor: colors.primary
+    }
+}
 
 export default Header;
