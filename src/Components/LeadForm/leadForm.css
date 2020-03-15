@@ -1,0 +1,52 @@
+
+.formCard {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    background-color: var(--secondary);
+}
+
+.halves {
+    width: 35%;
+    display: inline-block;
+    margin: 2%
+}
+
+.thirds {
+    width: 25%;
+    display: inline-block;
+    margin: 2%;
+}
+
+#submitButton {
+    margin-left: 20px;
+    background-color: var(--primary);
+}
+
+#radios {
+    display: inline-flex;
+}
+
+#dropdown {
+    width: 15%;
+}
+
+p {
+    margin: 5px
+}
+
+#demoText {
+    border: 2px var(--secondary) solid;
+    border-radius: 7px;
+    padding: 2px;
+    /* color: white */
+}
+
+form {
+    color: var(--primary);
+    background-color: white;
+}
+
+.validate {
+    color: black
+}
