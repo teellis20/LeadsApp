@@ -1,5 +1,5 @@
 import React from "react";
-import { TextInput, Button, Select, CardPanel } from "react-materialize";
+import { TextInput, Button, Select, CardPanel, Icon } from "react-materialize";
 
 import "./leadForm.css";
 
@@ -17,7 +17,7 @@ const LeadsForm = props => {
             className="validate"
             // placeholder="John"
             label="First Name"
-            error="First Name Needed!"
+            error="First Name Required!"
           />
         </div>
         <div className="halves">
@@ -27,7 +27,7 @@ const LeadsForm = props => {
             className="validate"
             // placeholder="Smith"
             label="Last Name"
-            error="Last Name Needed!"
+            error="Last Name Required!"
           />
         </div>
       </div>
@@ -39,12 +39,13 @@ const LeadsForm = props => {
             className="validate"
             // placeholder="test@test.com"
             label="Email"
-            error="Email Needed!"
+            error="Email Required!"
+            validate
           />
         </div>
         <div className="halves">
             <div id="demoText">
-           <h7>Would you like a free demo?</h7>
+           <h6>Would you like a free demo?</h6>
             </div>
            <div id="radios">
             <p>
@@ -55,7 +56,7 @@ const LeadsForm = props => {
             </p>
             <p>
                  <label>
-                <input className="with-gap radiobttn" name="demo" type="radio" />
+                <input className="with-gap radiobttn" name="demo" type="radio" checked />
                 <span className="checkmark">No</span>
                 </label>
             </p>
@@ -71,7 +72,7 @@ const LeadsForm = props => {
             className="validate"
             // placeholder="Seattle"
             label="City"
-            error="City Needed!"
+            error="City Required!"
           />
         </div>
         <div className="thirds" id="dropdown">
@@ -92,7 +93,7 @@ const LeadsForm = props => {
                         onOpenEnd: null,
                         onOpenStart: null,
                         outDuration: 200,
-                        required: true
+                        required: true,
                     }
                 }}
             >
@@ -149,15 +150,25 @@ const LeadsForm = props => {
                 <option value="Wyoming">WY</option>
             </Select>
          </div>
- 
+         <div className="thirds" id="zipDiv">
+           <TextInput
+           id="zip"
+           type="text" 
+           className="validate"
+           label="Zip Code"
+           error="Zip Code Required!"
+            />
+         </div>
+      
       <Button 
         id="submitButton"
         node="button"
         type="submit"
         waves="light"
         >Submit
+        <Icon right className="material-icon" id="icon">keyboard_arrow_right</Icon>
         </Button>
-      </div>
+        </div>
       
     </form>
         </CardPanel>

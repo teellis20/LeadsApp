@@ -24,11 +24,13 @@ const Header = props => {
             // style={searchStyle.search}
             className={searchClass}
             >
-                <CardPanel>
+                <CardPanel id="searchCard">
                     <TextInput id="searchInput"
                         placeholder="Search"
                     />
-                    <Button id="searchBttn">
+                    <Button id="searchBttn"
+                        waves="light"
+                    >
                  <Icon id="searchRight">search</Icon>
                  </Button>
                 </CardPanel>

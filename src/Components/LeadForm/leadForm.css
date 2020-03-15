@@ -18,9 +18,20 @@
     margin: 2%;
 }
 
+#zipDiv {
+    width: 10%;
+}
+.validate {
+    text-indent: 10px;
+}
+
 #submitButton {
     margin-left: 20px;
     background-color: var(--primary);
+}
+
+#icon {
+    margin-left: 0;
 }
 
 #radios {
@@ -49,4 +60,24 @@ form {
 
 .validate {
     color: black
+}
+
+@media only screen and (max-width: 550px) {
+    .halves {
+        width: 80%
+    }
+
+    .thirds {
+        width: 40%
+    }
+
+    #dropdown {
+        width: 30%
+    }
+
+    #submitButton {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 15px;
+    }
 }
