@@ -68,7 +68,7 @@ form {
     }
 
     .thirds {
-        width: 40%
+        width: 80%
     }
 
     #dropdown {
@@ -79,5 +79,9 @@ form {
         width: 80%;
         margin: auto;
         margin-bottom: 15px;
+    }
+
+    #zipDiv {
+        width: 40%;
     }
 }
