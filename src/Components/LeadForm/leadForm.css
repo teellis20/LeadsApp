@@ -4,6 +4,7 @@
     width: 80%;
     text-align: center;
     background-color: var(--secondary);
+    margin-bottom: 20px;
 }
 
 .halves {
@@ -36,6 +37,10 @@
 
 #radios {
     display: inline-flex;
+}
+
+.radioClass {
+    margin:5px 15px 5px 15px
 }
 
 #dropdown {
