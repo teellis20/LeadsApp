@@ -26,11 +26,11 @@ const MyRadio = ({ ...props}) => {
   )
 }
 
-// const MyTextInput = ({label, ...props}) => {
-//   const [field, meta] = useField(props);
-//   const errorText = meta.error && meta.touched ? meta.error : "";
-//   return <TextInput label={label} {...field} error={errorText} validate />
-// };
+const MyTextInput = ({label, type, ...props}) => {
+  const [field, meta] = useField(props);
+  return <TextInput className="validate" type={type} label={label} {...field} validate error={meta.error} />
+};
+
 
 const MySelect = ({ ...props}) => {
   const [field] = useField(props);
@@ -112,6 +112,7 @@ const MySelect = ({ ...props}) => {
   )
 }
 
+
 const LeadsForm = props => {
     return (
       // <div id="form">
@@ -122,17 +123,33 @@ const LeadsForm = props => {
           email: "",
           demo: "",
           phoneNumber: "",
-          state: "",
+          state: "select",
           zip: ""
         }}
-        validate = {(values, props) => {
+        validate = {(values) => {
           const errors = {};
-        
+          
           if (!values.email) {
             errors.email = "Email is required";
           } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
             errors.email = "Invalid email address";
           }
+
+          if (!values.firstName) {
+            errors.firstName = "First name is required"
+          }
+
+          if (!values.lastName) {
+            errors.lastName = "Last name is required"
+          }
+
+          if (!values.phoneNumber) {
+            errors.phoneNumber = "Phone number is required"
+          }
+          if (!values.zip) {
+            errors.zip = "Zip Code is required"
+          }
+          
           return errors;
         }}
         onSubmit={(data, {setSubmitting}) => {
@@ -148,15 +165,15 @@ const LeadsForm = props => {
               <Form>
                 <div>
                   <div className="halves">
-                    <Field name="firstName" type="text" as={TextInput} label="First Name" validate />
+                    <MyTextInput name="firstName" type="text" label="First Name" />
                   </div>
                   <div className="halves">
-                    <Field name="lastName" type="text" as={TextInput} label="Last Name" error="Last Name Required" required />
+                    <MyTextInput name="lastName" type="text" label="Last Name"  />
                   </div>
                 </div>
                 <div>
                   <div className="halves">
-                    <Field name="email" type="email" as={TextInput} label="Email" error={errors.email} validate={props.validate} />
+                    <MyTextInput name="email" type="email" label="Email" />
                   </div>
                   <div className="halves">
                     <div id="demoText">
@@ -170,13 +187,14 @@ const LeadsForm = props => {
                 {/* phone number */}
                 <div>
                   <div className="thirds">
-                    <Field name="phoneNumber" type="tel" as={TextInput} label="Phone Number" error="Phone Number Required" required />
+                    <MyTextInput name="phoneNumber" type="tel" label="Phone Number" />
                   </div>
                   <div className="thirds" id="dropdown">
-                    <MySelect name="state" />
+                    <MySelect name="state" error={errors.state}
+                validate/>
                   </div>
                   <div className="thirds" id="zipDiv">
-                  <Field name="zip" type="tel" as={TextInput} label="Zip Code" error="Zip Code Required" required />
+                  <MyTextInput name="zip" type="tel" label="Zip Code" />
                   </div>
 
                 <Button 
@@ -189,6 +207,7 @@ const LeadsForm = props => {
                   <Icon right className="material-icon" id="icon">keyboard_arrow_right</Icon>
                 </Button>
                   </div>
+                  <Button type="button" onClick={() => {console.log(errors)}}>log</Button>
 
               </Form>
             </CardPanel>
