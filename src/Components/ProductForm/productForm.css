@@ -1,0 +1,18 @@
+#radioDiv {
+    width: 100%;
+    margin-top: 25px;
+    text-align: center;
+    
+}
+
+.customRadio {
+    display: inline-block;
+    padding: 30px;
+    text-align: center;
+    margin: 10px;
+
+}
+
+.radioImage{
+    border-radius: 50%;
+}

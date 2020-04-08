@@ -4,6 +4,7 @@ import Header from "./Components/Header/Header";
 import LeadsForm from './Components/LeadForm/LeadForm';
 import HowTo from './Components/HowTo/HowTo';
 import Partner from './Components/Partner/Partner';
+import ProductForm from "./Components/ProductForm/ProductForm";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <HowTo />
       <Partner />
+      <ProductForm />
       {/* <LeadsForm /> */}
     </div>
   );
