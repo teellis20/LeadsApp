@@ -16,3 +16,11 @@
 .radioImage{
     border-radius: 50%;
 }
+
+.formCard {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    background-color: var(--secondary);
+    margin-bottom: 20px;
+}

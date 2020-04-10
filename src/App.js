@@ -1,19 +1,25 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch, useParams } from "react-router-dom";
 import logo from './logo.svg';
-import Header from "./Components/Header/Header";
-import LeadsForm from './Components/LeadForm/LeadForm';
-import HowTo from './Components/HowTo/HowTo';
-import Partner from './Components/Partner/Partner';
+import Main from "./pages/Main/Main";
 import ProductForm from "./Components/ProductForm/ProductForm";
 
 function App() {
+
+  // let { url } = useParams();
+
   return (
     <div>
-      <Header />
-      <HowTo />
-      <Partner />
-      <ProductForm />
-      {/* <LeadsForm /> */}
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route
+            exact
+            path="/product/:product"
+            component={ProductForm}
+            />
+        </Switch>
+      </Router>
     </div>
   );
 }
