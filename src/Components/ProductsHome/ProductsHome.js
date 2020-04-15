@@ -5,25 +5,26 @@ import "./productsHome.css";
 
 const ProductsHome = props => {
 
-const ProductList = () => {
-    let productArr = products.products.map((item) => {
-        console.log("new line" + item + "and" + item.name);
-        let url = "/product/" + item.name;
-        return (
-            // <div className="productList">
-                <a href={url}>
+    const ProductList = () => {
+        let productArr = products.products.map((item) => {
+            console.log("new line" + item + "and" + item.name);
+            let url = "/product/" + item.name;
+            return (
+                <a className="productHover" href={url}>
                     {/* src={item.img} */}
-                <img className="productImage" src="https://loremflickr.com/360/360" alt="random" />
+                    <img className="productImage" src={item.homeImage} alt="random" />
                 </a>
-            // </div>
-        )
-    });
+            )
+        });
         return productArr;
-}
+    }
 
-    return(
-        <div id="productContainer">
-            <ProductList />
+    return (
+        <div className="container">
+            <h2>Our Products</h2>
+            <div id="productContainer">
+                <ProductList />
+            </div>
         </div>
     );
 };

@@ -24,3 +24,7 @@
     background-color: var(--secondary);
     margin-bottom: 20px;
 }
+
+.productFormContainer {
+    margin-top: 10px;
+}

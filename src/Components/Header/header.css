@@ -19,9 +19,11 @@ nav {
 
 .hideSearch {
     visibility: hidden;
+    display: none;
 }
 
 .showSearch {
+    display: block;
     visibility: visible;
     width: 80%;
     margin-left: 10%;;

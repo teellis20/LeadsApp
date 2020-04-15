@@ -63,7 +63,7 @@ const Header = props => {
                 // className="chec"
                 alignLinks="right"
                 brand={<a
-                    className="brand-logo" href="#">Business Right</a>}
+                    className="brand-logo" href="/">Business Right</a>}
                 menuIcons={<Icon>menu</Icon>}
                 options={{
                     draggable: true,

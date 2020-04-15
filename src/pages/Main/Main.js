@@ -9,8 +9,8 @@ const Main = props => {
         <div>
             <Header />
             <HowTo />
-            <Partner />
             <ProductsHome />
+            <Partner />
         </div>
     );
 };

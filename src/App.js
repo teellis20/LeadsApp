@@ -6,8 +6,6 @@ import ProductForm from "./Components/ProductForm/ProductForm";
 
 function App() {
 
-  // let { url } = useParams();
-
   return (
     <div>
       <Router>
