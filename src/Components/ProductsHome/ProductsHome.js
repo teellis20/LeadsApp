@@ -20,7 +20,7 @@ const ProductsHome = props => {
     }
 
     return (
-        <div className="container">
+        <div id="productHome" className="container">
             <h2>Our Products</h2>
             <div id="productContainer">
                 <ProductList />

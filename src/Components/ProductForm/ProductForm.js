@@ -56,7 +56,10 @@ const ProductForm = props => {
 
     return (
         <div>
-        <Header />
+        <Header 
+            partnerLink={"/#hero-image"}
+            productLink={"/#productHome"}
+        />
             <div className="productFormContainer">
             <CardPanel className="formCard">
                 <div id="radioDiv">

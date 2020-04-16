@@ -78,11 +78,11 @@ const Header = props => {
                     centerLogo: true
                 }}
             >
-                <NavItem href="#">
-                    Getting started
+                <NavItem href={props.partnerLink}>
+                    Partners
             </NavItem>
-                <NavItem href="#">
-                    Categories
+                <NavItem href={props.productLink}>
+                    Products
             </NavItem>
                 <NavItem className="sidenav-close" href="#"
                     onClick={() => searchSwitch()}

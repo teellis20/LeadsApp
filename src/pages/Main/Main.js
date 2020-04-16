@@ -7,7 +7,10 @@ import ProductsHome from "../../Components/ProductsHome/ProductsHome";
 const Main = props => {
     return (
         <div>
-            <Header />
+            <Header
+                partnerLink={"#hero-image"}
+                productLink={"#productHome"}
+            />
             <HowTo />
             <ProductsHome />
             <Partner />
