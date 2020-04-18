@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { CardPanel } from "react-materialize";
 
 import Header from "../Header/Header";
+import MyFooter from "../Footer/Footer";
 
 import "./productForm.css";
 import products from "../../constants/products.js";
@@ -57,7 +58,7 @@ const ProductForm = props => {
     return (
         <div>
         <Header 
-            partnerLink={"/#hero-image"}
+            partnerLink={"/partners"}
             productLink={"/#productHome"}
         />
             <div className="productFormContainer">
@@ -67,6 +68,7 @@ const ProductForm = props => {
                 </div>
             </CardPanel>
         </div>
+        <MyFooter />
         </div>
     )
 };

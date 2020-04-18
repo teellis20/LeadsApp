@@ -8,6 +8,12 @@ const Partner = props => {
         <div id="hero-image">
             <div className="hero-text">
                 <h4>Be our partner!</h4>
+                <Button 
+                href="/partners"
+                node="a"
+                waves="light"
+                id="partnerButton"
+                > Join Us </Button>
             </div>
 
         </div>

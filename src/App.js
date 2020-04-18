@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, useParams } from "react-router-
 import logo from './logo.svg';
 import Main from "./pages/Main/Main";
 import ProductForm from "./Components/ProductForm/ProductForm";
+import PartnerPage from "./Components/PartnerPage/PartnerPage";
 
 function App() {
 
@@ -15,6 +16,11 @@ function App() {
             exact
             path="/product/:product"
             component={ProductForm}
+            />
+          <Route
+            exact
+            path="/partners"
+            component={PartnerPage}
             />
         </Switch>
       </Router>
