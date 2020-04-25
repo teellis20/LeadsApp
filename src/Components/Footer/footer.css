@@ -1,3 +1,8 @@
 #myFooter{
     background-color: rgb(37, 46, 59);
+    /* position: absolute; */
+    /* bottom: 0; */
+    width: 100%;
+    flex-shrink: 0;
 }
+

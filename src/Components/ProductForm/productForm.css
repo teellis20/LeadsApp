@@ -10,11 +10,13 @@
     padding: 30px;
     text-align: center;
     margin: 10px;
-
 }
 
 .radioImage{
     border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    background-color: white;
 }
 
 .formCard {
@@ -28,3 +30,31 @@
 .productFormContainer {
     margin-top: 10px;
 }
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#content-wrap {
+    /* padding-bottom: 14rem;   */
+    flex: 1 0 auto;
+  }
+
+  #productBttn {
+    background-color: var(--primary);
+    padding: 0 40px 0 40px;
+  }
+
+  @media only screen and (max-width: 600px) {
+      .customRadio {
+          margin: 2px;
+          padding: 15px;
+      } 
+
+
+  }

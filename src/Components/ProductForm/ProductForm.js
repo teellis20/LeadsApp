@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { CardPanel } from "react-materialize";
+import { CardPanel, Button } from "react-materialize";
 
 import Header from "../Header/Header";
 import MyFooter from "../Footer/Footer";
@@ -32,18 +32,21 @@ const ProductForm = props => {
 
         getCurrentProduct();
         console.log("this is test/ array number " + productIndex)
-        let currentProduct = products.products[productIndex].questions1.map((item) => {
-            console.log("new line" + item);
+        let currentObj = products.products[productIndex];
+        let indexNum = 0;
+        let currentProduct = currentObj.questions1.map((item) => {
+            console.log("new line" + currentObj.icons1[3]);
+            indexNum = currentObj.questions1.indexOf(item);
             return (
                 <div className="customRadio">
                     {/* <CardPanel> */}
                     <input
-                        type="radio" name="product"
-                        id={item.name} value="test" />
+                        className="with-gap" type="radio" name="product"
+                        id={currentObj.name} value="test" />
                     <label for='test'>
-                        <img className="radioImage"
-                            src="//placekitten.com/151/151"
-                            alt="I'm happy" />
+                        <img className="radioImage hoverable"
+                            src={currentObj.icons1[indexNum]}
+                            alt={item} />
                     </label>
                     <p>{item}</p>
                     {/* </CardPanel> */}
@@ -57,18 +60,22 @@ const ProductForm = props => {
 
     return (
         <div>
-        <Header 
-            partnerLink={"/partners"}
-            productLink={"/#productHome"}
-        />
-            <div className="productFormContainer">
-            <CardPanel className="formCard">
-                <div id="radioDiv">
-                    <Radios />
+            <div className="content-wrap" >
+                <Header
+                    partnerLink={"/partners"}
+                    productLink={"/#productHome"}
+                />
+                <div className="productFormContainer">
+                    <CardPanel className="formCard">
+                        <h2>{}</h2>
+                        <div id="radioDiv">
+                            <Radios />
+                        </div>
+                        <Button id="productBttn"> Next </Button>
+                    </CardPanel>
                 </div>
-            </CardPanel>
-        </div>
-        <MyFooter />
+            </div>
+            <MyFooter />
         </div>
     )
 };

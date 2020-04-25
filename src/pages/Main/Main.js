@@ -5,9 +5,12 @@ import Partner from "../../Components/Partner/Partner";
 import ProductsHome from "../../Components/ProductsHome/ProductsHome";
 import MyFooter from "../../Components/Footer/Footer";
 
+import "./mainPage.css";
+
 const Main = props => {
     return (
-        <div>
+        <div className="body">
+            <div id="content-wrap">
             <Header
                 partnerLink={"#hero-image"}
                 productLink={"#productHome"}
@@ -15,6 +18,7 @@ const Main = props => {
             <HowTo />
             <ProductsHome />
             <Partner />
+            </div>
             <MyFooter />
         </div>
     );
