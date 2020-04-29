@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Navbar, NavItem, Icon, TextInput, CardPanel, Button } from "react-materialize";
 import { Animated } from "react-animated-css";
 import "./header.css";
-import colors from "../../constants/colors";
+// import colors from "../../constants/colors";
 
 const Header = props => {
 
@@ -99,10 +99,10 @@ const Header = props => {
     )
 };
 
-const styles = {
-    header: {
-        backgroundColor: colors.primary
-    }
-}
+// const styles = {
+//     header: {
+//         backgroundColor: colors.primary
+//     }
+// }
 
 export default Header;

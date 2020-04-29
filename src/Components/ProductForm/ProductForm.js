@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { CardPanel, Button } from "react-materialize";
 
 import Header from "../Header/Header";
@@ -13,8 +13,11 @@ const ProductForm = props => {
     let url = props.match.params.product;
     console.log(url + "is type of " + typeof (url));
     let productIndex = 0;
+    
+    const [count, setCount] = useState(1);
+    let currentObj;
 
-    useEffect(() => getCurrentProduct(), []);
+    // useEffect(() => getCurrentProduct(), []);
 
     const getCurrentProduct = () => {
         productIndex = 0;
@@ -24,28 +27,47 @@ const ProductForm = props => {
                 console.log("this worked! " + products.products[i].name + " array of" + i);
             }
         }
-        return productIndex;
+        currentObj = products.products[productIndex]
+        return currentObj;
     }
+    
+    getCurrentProduct();
 
+    let radioQ;
+    let radioH;
+    let radioI;
+    switch (count) {
+        case 1:
+            radioH = currentObj.header1
+            radioQ = currentObj.questions1;
+            radioI = currentObj.icons1;
+            break;
+        case 2:
+            radioH = currentObj.header2;
+            radioQ = currentObj.questions2;
+            radioI = currentObj.icons2;
+            break;
+    };
+    
+    console.log(radioI);
+    console.log(radioQ);
 
     const Radios = () => {
 
-        getCurrentProduct();
         console.log("this is test/ array number " + productIndex)
-        let currentObj = products.products[productIndex];
         let indexNum = 0;
-        let currentProduct = currentObj.questions1.map((item) => {
-            console.log("new line" + currentObj.icons1[3]);
-            indexNum = currentObj.questions1.indexOf(item);
+        let currentProduct = radioQ.map((item) => {
+            // console.log("new line" + currentObj.icons1[3]);
+            indexNum = radioQ.indexOf(item);
             return (
                 <div className="customRadio">
                     {/* <CardPanel> */}
                     <input
                         className="with-gap" type="radio" name="product"
-                        id={currentObj.name} value="test" />
-                    <label for='test'>
+                        id={currentObj.name} value={currentObj.name} />
+                    <label htmlFor={currentObj.name}>
                         <img className="radioImage hoverable"
-                            src={currentObj.icons1[indexNum]}
+                            src={radioI[indexNum]}
                             alt={item} />
                     </label>
                     <p>{item}</p>
@@ -67,11 +89,11 @@ const ProductForm = props => {
                 />
                 <div className="productFormContainer">
                     <CardPanel className="formCard">
-                        <h2>{}</h2>
+                        <h2>{radioH}</h2>
                         <div id="radioDiv">
                             <Radios />
                         </div>
-                        <Button id="productBttn"> Next </Button>
+                        <Button id="productBttn" onClick={() => setCount(count + 1)}> Next </Button>
                     </CardPanel>
                 </div>
             </div>
