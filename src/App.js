@@ -17,7 +17,7 @@ function App() {
           <Route
             exact
             path="/product/:product"
-            component={ProductForm}
+            component={ProductSurvey}
             />
           <Route
             exact

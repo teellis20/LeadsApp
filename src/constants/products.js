@@ -12,6 +12,7 @@ export default {
         icons2: ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
         header3: "How Many?",
         questions3: ["1 System", "2+ Systems"],
+        icons3: ["https://via.placeholder.com/150", "https://via.placeholder.com/150"]
     }, 
     {
         name: "atm",

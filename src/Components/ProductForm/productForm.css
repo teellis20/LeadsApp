@@ -48,6 +48,13 @@ body {
   #productBttn {
     background-color: var(--primary);
     padding: 0 40px 0 40px;
+    margin-left: 10px;
+  }
+
+  #backBttn {
+    color: var(--primary);
+    background-color: white;
+    padding: 0 40px 0 40px;
   }
 
   @media only screen and (max-width: 600px) {
