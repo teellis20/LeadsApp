@@ -7,89 +7,9 @@ import MyFooter from "../Footer/Footer";
 import "./productForm.css";
 import products from "../../constants/products.js";
 
-// changes were made here on out
-// just to make sure I don't miss it
 
 const ProductForm = props => {
-    // let url = props.match.params.product;
-
-    // let url = props.currentUrl;
-    // console.log(url + "is type of " + typeof (url));
-//     let productIndex = 0;
-    
-//     const [count, setCount] = useState(1);
-//     const [step, setStep] = useState(props.step);
-//     let currentObj;
-
-//     // useEffect(() => , []);
-
-//     const getCurrentProduct = () => {
-//         productIndex = 0;
-//         for (let i = 0; i < products.products.length; i++) {
-//             if (url === products.products[i].name) {
-//                 productIndex = i;
-//                 // console.log("this worked! " + products.products[i].name + " array of" + i);
-//             }
-//         }
-//         currentObj = products.products[productIndex]
-//         return currentObj;
-//     }
-
-//     // marker to show test
-    
-//     getCurrentProduct();
-
-//     let radioQ;
-//     let radioH;
-//     let radioI;
-//     let renderButton;
-
-//     switch (count) {
-//         case 1:
-//             radioH = currentObj.header1
-//             radioQ = currentObj.questions1;
-//             radioI = currentObj.icons1;
-//             break;
-//         case 2:
-//             radioH = currentObj.header2;
-//             radioQ = currentObj.questions2;
-//             radioI = currentObj.icons2;
-//             renderButton = <Button id="backBttn" onClick={() => {backStep()}} > Back </Button>;
-//             break;
-//         case 3:
-//             if (currentObj.header3) {
-//                 radioH = currentObj.header3
-//                 radioQ = currentObj.questions3;
-//                 radioI = currentObj.icons3;
-//                 renderButton = <Button id="backBttn" onClick={() => {backStep()}} > Back </Button>;
-//                 break;
-//             } else {
-//                 setCount(count + 1);
-//                 setStep(step + 1);
-                
-//             };
-//             break;
-            
-//     };
-
-//    const updateCount = () => {
-//        setCount(count + 1);
-//        setStep(step + 1);
-//        console.log( "this is step: " + step);
-//        console.log( "this is count: " + count);
-//    }
    
-//    const backStep = () => {
-//        setCount(count - 1);
-//        setStep(step - 1);
-//    }
-    
-//     // console.log(radioI);
-//     // console.log(radioQ);
-
-    // const [newButton, setNewButton] = useState(props.renderButton);
-
-    // console.log(newButton);
 
     const GetBackButton = () => {
         if (props.renderButton === "back") {

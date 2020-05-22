@@ -5,6 +5,7 @@
     text-align: center;
     background-color: var(--secondary);
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .halves {
@@ -29,6 +30,14 @@
 #submitButton {
     margin-left: 20px;
     background-color: var(--primary);
+    margin-bottom: 15px;
+}
+
+#backButton {
+    background-color: white;
+    color: var(--primary);
+    padding: 0 42px 0 42px; 
+    margin-bottom: 15px;
 }
 
 #icon {
@@ -81,8 +90,13 @@ form {
     }
 
     #submitButton {
-        width: 80%;
-        margin: auto;
+        width: 40%;
+        /* margin: auto; */
+        margin-bottom: 15px;
+    }
+    #backButton {
+        width: 40%;
+        /* margin: auto; */
         margin-bottom: 15px;
     }
 

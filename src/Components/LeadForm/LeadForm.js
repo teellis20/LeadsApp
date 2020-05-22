@@ -197,6 +197,8 @@ const LeadsForm = props => {
                   <MyTextInput name="zip" type="tel" label="Zip Code" />
                   </div>
 
+                <div id="buttonDiv" >
+                  <Button id="backButton" onClick={() => { props.backStep() }} > Back </Button>
                 <Button 
                   id="submitButton"
                   node="button"
@@ -206,8 +208,9 @@ const LeadsForm = props => {
                   >Submit
                   <Icon right className="material-icon" id="icon">keyboard_arrow_right</Icon>
                 </Button>
+                </div>
                   </div>
-                  <Button type="button" onClick={() => {console.log(errors)}}>log</Button>
+                  {/* <Button type="button" onClick={() => {console.log(errors)}}>log</Button> */}
 
               </Form>
             </CardPanel>

@@ -8,8 +8,6 @@ import MyFooter from "../../Components/Footer/Footer";
 import products from "../../constants/products";
 import LeadsForm from "../../Components/LeadForm/LeadForm";
 
-// changes were made here on out
-// just to make sure I don't miss it
 
 const ProductSurvey = props => {
 
@@ -35,20 +33,8 @@ const ProductSurvey = props => {
         return currentObj;
     }
 
-    // marker to show test
-
     getCurrentProduct();
 
-
-    // const getBackButton = (status) => {
-    //     if (status) {
-    //         console.log(status);
-    //         return <Button id="backBttn" onClick={() => { props.backStep() }} > Back </Button>
-    //     } else {
-    //         return
-    //     }
-        
-    // }
 
     let radioQ;
     let radioH;
@@ -113,7 +99,6 @@ const ProductSurvey = props => {
                     currentObj={currentObj}
                     updateCount={updateCount}
                     renderButton={renderButton}
-                    // getBackButton={getBackButton}
                     backStep={backStep}
 
                 />;
@@ -126,7 +111,6 @@ const ProductSurvey = props => {
                     currentObj={currentObj}
                     updateCount={updateCount}
                     renderButton={renderButton}
-                    // getBackButton={getBackButton}
                     backStep={backStep}
 
                 />;
@@ -139,12 +123,13 @@ const ProductSurvey = props => {
                     currentObj={currentObj}
                     updateCount={updateCount}
                     renderButton={renderButton}
-                    // getBackButton={getBackButton}
                     backStep={backStep}
 
                 />;
             case 4:
-                return <LeadForm />;
+                return <LeadForm 
+                backStep={backStep}
+                />;
         }
     }
 
