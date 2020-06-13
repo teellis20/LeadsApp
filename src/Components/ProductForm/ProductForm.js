@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { CardPanel, Button } from "react-materialize";
 
-import Header from "../Header/Header";
-import MyFooter from "../Footer/Footer";
+// import Header from "../Header/Header";
+// import MyFooter from "../Footer/Footer";
 
 import "./productForm.css";
-import products from "../../constants/products.js";
+// import products from "../../constants/products.js";
 
 
 const ProductForm = props => {
-   
+
+    const [selectedQuestion, setSelectedQuestion] = useState("");
+    const [currentAnswer1, setCurrentAnswer1] = useState("");
+    const [currentAnswer2, setCurrentAnswer2] = useState("");
+    const [currentAnswer3, setCurrentAnswer3] = useState("");
+
 
     const GetBackButton = () => {
         if (props.renderButton === "back") {
@@ -21,6 +26,20 @@ const ProductForm = props => {
         }
     }
 
+    const isThisOn = (name) => {
+        if (props.step === 1) {
+            setCurrentAnswer1(name);
+            setSelectedQuestion(name);
+        }
+        else if (props.step === 2) {
+            setCurrentAnswer2(name);
+            setSelectedQuestion(name);
+        }
+        else if (props.step === 3) {
+            setCurrentAnswer3(name);
+            setSelectedQuestion(name);
+        }
+    };
 
     const Radios = () => {
 
@@ -30,15 +49,16 @@ const ProductForm = props => {
             // console.log("new line" + currentObj.icons1[3]);
             indexNum = props.radioQ.indexOf(item);
             return (
-                <div className="customRadio">
+                <div className="customRadio" key={indexNum}>
                     {/* <CardPanel> */}
-                    <input
+                    {/* <input
                         className="with-gap" type="radio" name="product"
-                        id={props.currentObj.name} value={props.currentObj.name} />
+                        id={props.currentObj.name} value={props.currentObj.name} /> */}
                     <label htmlFor={props.currentObj.name}>
-                        <img className="radioImage hoverable"
+                        <img className={( currentAnswer1 === item || currentAnswer2 === item ||currentAnswer3 === item) ? "radioImage hoverable radioActive" : "radioImage hoverable normal"}
                             src={props.radioI[indexNum]}
-                            alt={item} />
+                            alt={item}
+                            onClick={() => isThisOn(item)} />
                     </label>
                     <p>{item}</p>
                     {/* </CardPanel> */}
@@ -64,7 +84,11 @@ const ProductForm = props => {
                             <Radios />
                         </div>
                         <GetBackButton />
-                        <Button id="productBttn" onClick={() => props.updateCount()}> Next </Button>
+                        <Button id="productBttn" onClick={() => {
+                            props.checkAnswer(selectedQuestion);
+                            props.updateCount()
+                        }
+                        }> Next </Button>
                     </CardPanel>
                 </div>
             </div>

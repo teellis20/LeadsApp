@@ -57,6 +57,15 @@ body {
     padding: 0 40px 0 40px;
   }
 
+.radioActive {
+    border: 5px black solid;
+}
+
+.normal {
+    border: solid 0px white;
+}
+  
+
   @media only screen and (max-width: 600px) {
       .customRadio {
           margin: 2px;

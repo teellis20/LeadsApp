@@ -19,6 +19,10 @@ const ProductSurvey = props => {
     const [count, setCount] = useState(1);
     let currentObj;
 
+    const [answer1, setAnswer1] = useState("");
+    const [answer2, setAnswer2] = useState("");
+    const [answer3, setAnswer3] = useState("");
+
     // useEffect(() => , []);
 
     const getCurrentProduct = () => {
@@ -64,9 +68,9 @@ const ProductSurvey = props => {
             } else {
                 setCount(count + 1);
                 setStep(step + 1);
+                break
 
             };
-            break;
 
     };
 
@@ -80,13 +84,28 @@ const ProductSurvey = props => {
     const backStep = () => {
         setCount(count - 1);
         setStep(step - 1);
+        console.log("count is " + count);
+        console.log("step is " + step);
     }
 
     // console.log(radioI);
     // console.log(radioQ);
 
+const checkAnswer = (answer) => {
+    if (step === 1) {
+        setAnswer1(answer)
+    }
+    else if (step === 2) {
+        setAnswer2(answer)
+    }
+    else if (step === 3) {
+        setAnswer3(answer)
+    }
+}
 
-
+console.log("answer 1: " + answer1);
+console.log("answer 2: " + answer2);
+console.log("answer 3: " + answer3);
 
     const renderSwitch = () => {
         switch (step) {
@@ -100,7 +119,12 @@ const ProductSurvey = props => {
                     updateCount={updateCount}
                     renderButton={renderButton}
                     backStep={backStep}
-
+                    checkAnswer={checkAnswer}
+                    answer1={answer1}
+                    answer2={answer2}
+                    answer3={answer3}
+                    step={step}
+                    
                 />;
             case 2:
                 console.log("mic check mic check2");
@@ -112,6 +136,12 @@ const ProductSurvey = props => {
                     updateCount={updateCount}
                     renderButton={renderButton}
                     backStep={backStep}
+                    checkAnswer={checkAnswer}
+                    answer1={answer1}
+                    answer2={answer2}
+                    answer3={answer3}
+                    step={step}
+
 
                 />;
             case 3:
@@ -124,6 +154,12 @@ const ProductSurvey = props => {
                     updateCount={updateCount}
                     renderButton={renderButton}
                     backStep={backStep}
+                    checkAnswer={checkAnswer}
+                    answer1={answer1}
+                    answer2={answer2}
+                    answer3={answer3}
+                    step={step}
+
 
                 />;
             case 4:

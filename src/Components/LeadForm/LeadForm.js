@@ -198,7 +198,7 @@ const LeadsForm = props => {
                   </div>
 
                 <div id="buttonDiv" >
-                  <Button id="backButton" onClick={() => { props.backStep() }} > Back </Button>
+                  <Button type="button" id="backButton" onClick={() => { props.backStep() }} > Back </Button>
                 <Button 
                   id="submitButton"
                   node="button"
@@ -214,7 +214,6 @@ const LeadsForm = props => {
 
               </Form>
             </CardPanel>
-
 
               <pre>{JSON.stringify(values, null, 2)}</pre>
               <pre>{JSON.stringify(errors, null, 2)}</pre>
