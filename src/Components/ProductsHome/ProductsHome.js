@@ -7,10 +7,10 @@ const ProductsHome = props => {
 
     const ProductList = () => {
         let productArr = products.products.map((item) => {
-            console.log("new line" + item + "and" + item.name);
+            // console.log("new line" + item + "and" + item.name);
             let url = "/product/" + item.name;
             return (
-                <a className="productHover" href={url}>
+                <a key={item.name} className="productHover" href={url}>
                     {/* src={item.img} */}
                     <img className="productImage" src={item.homeImage} alt="random" />
                 </a>

@@ -95,8 +95,7 @@ form {
         margin-bottom: 15px;
     }
     #backButton {
-        width: 40%;
-        /* margin: auto; */
+        padding: 0 30px 0 30px;
         margin-bottom: 15px;
     }
 

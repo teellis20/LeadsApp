@@ -198,7 +198,7 @@ const LeadsForm = props => {
                   </div>
 
                 <div id="buttonDiv" >
-                  <Button type="button" id="backButton" onClick={() => { props.backStep() }} > Back </Button>
+                  <Button type="button" id="backButton" onClick={() => { props.backStep() }} >Back</Button>
                 <Button 
                   id="submitButton"
                   node="button"
