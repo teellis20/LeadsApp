@@ -11,9 +11,9 @@ import "./productForm.css";
 const ProductForm = props => {
 
     const [selectedQuestion, setSelectedQuestion] = useState("");
-    const [currentAnswer1, setCurrentAnswer1] = useState("");
-    const [currentAnswer2, setCurrentAnswer2] = useState("");
-    const [currentAnswer3, setCurrentAnswer3] = useState("");
+    const [currentAnswer1, setCurrentAnswer1] = useState(props.answer1);
+    const [currentAnswer2, setCurrentAnswer2] = useState(props.answer2);
+    const [currentAnswer3, setCurrentAnswer3] = useState(props.answer3);
 
 
     const GetBackButton = () => {
