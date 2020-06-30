@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, useParams } from "react-router-dom";
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import logo from './logo.svg';
 import Main from "./pages/Main/Main";
 import ProductSurvey from "./pages/ProductSurvey/ProductSurvey";
 
-import ProductForm from "./Components/ProductForm/ProductForm";
 import PartnerPage from "./Components/PartnerPage/PartnerPage";
 
 function App() {

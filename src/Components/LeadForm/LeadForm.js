@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Field, Form, useField } from "formik";
+import { Formik, Form, useField } from "formik";
 import { TextInput, Button, Select, CardPanel, Icon, RadioGroup } from "react-materialize";
 
 import "./leadForm.css";
@@ -112,6 +112,8 @@ const MySelect = ({ ...props}) => {
   )
 }
 
+// Beginning of the Formik disma
+
 
 const LeadsForm = props => {
     return (
@@ -127,7 +129,14 @@ const LeadsForm = props => {
           zip: ""
         }}
         validate = {(values) => {
-          const errors = {};
+          const errors = {
+            email:"",
+            firstName:"",
+            lastName: "",
+            phoneNumber: "",
+            zip: "",
+
+          };
           
           if (!values.email) {
             errors.email = "Email is required";
@@ -152,28 +161,32 @@ const LeadsForm = props => {
           
           return errors;
         }}
-        onSubmit={(data, {setSubmitting}) => {
+        onSubmit={(data, {setSubmitting, resetForm}) => {
           setSubmitting(true);
           //make async call
+          setTimeout(() => {
+            alert(JSON.stringify(data, null, 2));
+            resetForm();
+            setSubmitting(false);
+          }, 500);
           console.log("submitted: ", data);
-          setSubmitting(false);
         }}
         >
-          {({ values, errors, isSubmitting }) => (
+          {({ values, errors, touched, handleChange, handleBlur, isSubmitting, handleSubmit}) => (
             <div id="form">
             <CardPanel className="formCard">
-              <Form>
+              <Form onSubmit={handleSubmit}>
                 <div>
                   <div className="halves">
-                    <MyTextInput name="firstName" type="text" label="First Name" />
+                    <MyTextInput id="firstName" name="firstName" type="text" label="First Name" onChange={handleChange} onBlur={handleBlur} value={values.firstName} />
                   </div>
                   <div className="halves">
-                    <MyTextInput name="lastName" type="text" label="Last Name"  />
+                    <MyTextInput name="lastName" id="lastName" type="text" label="Last Name" onChange={handleChange} />
                   </div>
                 </div>
                 <div>
                   <div className="halves">
-                    <MyTextInput name="email" type="email" label="Email" />
+                    <MyTextInput name="email" id="email" type="email" label="Email" onChange={handleChange} />
                   </div>
                   <div className="halves">
                     <div id="demoText">
@@ -187,14 +200,14 @@ const LeadsForm = props => {
                 {/* phone number */}
                 <div>
                   <div className="thirds">
-                    <MyTextInput name="phoneNumber" type="tel" label="Phone Number" />
+                    <MyTextInput name="phoneNumber" id="phoneNumber" type="tel" label="Phone Number" onChange={handleChange} />
                   </div>
                   <div className="thirds" id="dropdown">
-                    <MySelect name="state" error={errors.state}
+                    <MySelect name="state" id="state" error={errors.state}
                 validate/>
                   </div>
                   <div className="thirds" id="zipDiv">
-                  <MyTextInput name="zip" type="tel" label="Zip Code" />
+                  <MyTextInput name="zip" id="zip" type="tel" label="Zip Code" onChange={handleChange} />
                   </div>
 
                 <div id="buttonDiv" >
@@ -202,7 +215,8 @@ const LeadsForm = props => {
                 <Button 
                   id="submitButton"
                   node="button"
-                  type="submit"
+                  type="button"
+                  onClick={() => props.submitForms(values)}
                   disabled={isSubmitting}
                   waves="light"
                   >Submit

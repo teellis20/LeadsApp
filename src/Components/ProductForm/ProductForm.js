@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { CardPanel, Button } from "react-materialize";
 
-// import Header from "../Header/Header";
-// import MyFooter from "../Footer/Footer";
-
 import "./productForm.css";
-// import products from "../../constants/products.js";
 
 
 const ProductForm = props => {

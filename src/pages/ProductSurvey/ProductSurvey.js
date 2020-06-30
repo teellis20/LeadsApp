@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Button } from "materialize-css";
+import LeadsAPI from "../../utils/LeadsAPI";
 import Header from "../../Components/Header/Header";
 import ProductForm from "../../Components/ProductForm/ProductForm";
 import LeadForm from "../../Components/LeadForm/LeadForm";
 import MyFooter from "../../Components/Footer/Footer";
 
 import products from "../../constants/products";
-import LeadsForm from "../../Components/LeadForm/LeadForm";
 
 
 const ProductSurvey = props => {
@@ -19,9 +18,20 @@ const ProductSurvey = props => {
     const [count, setCount] = useState(1);
     let currentObj;
 
+
     const [answer1, setAnswer1] = useState("");
     const [answer2, setAnswer2] = useState("");
     const [answer3, setAnswer3] = useState("");
+    // const [firstName, setFirstName] = useState("");
+    // const [lastName, setLastName] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [demo, setDemo] = useState("no");
+    // const [phoneNumber, setPhoneNumber] = useState("");
+    // const [state, setState] = useState("");
+    // const [zip, setZip] = useState("");
+
+    const demo = "no";
+
 
     // useEffect(() => , []);
 
@@ -33,7 +43,8 @@ const ProductSurvey = props => {
                 // console.log("this worked! " + products.products[i].name + " array of" + i);
             }
         }
-        currentObj = products.products[productIndex]
+        currentObj = products.products[productIndex];
+        console.log("current product is: " + currentObj.name);
         return currentObj;
     }
 
@@ -71,6 +82,12 @@ const ProductSurvey = props => {
                 break
 
             };
+        default: 
+        radioH = currentObj.header1
+            radioQ = currentObj.questions1;
+            radioI = currentObj.icons1;
+            renderButton = "noback";
+            break;
 
     };
 
@@ -101,19 +118,19 @@ const ProductSurvey = props => {
 
     const checkAnswer = (answer) => {
         if (step === 1) {
-            if(answer==="") {
+            if (answer === "") {
                 return;
             }
             setAnswer1(answer)
         }
         else if (step === 2) {
-            if(answer==="") {
+            if (answer === "") {
                 return;
             }
             setAnswer2(answer)
         }
         else if (step === 3) {
-            if(answer==="") {
+            if (answer === "") {
                 return;
             }
             setAnswer3(answer)
@@ -124,10 +141,34 @@ const ProductSurvey = props => {
     console.log("answer 2: " + answer2);
     console.log("answer 3: " + answer3);
 
+    const submitForms = event => {
+        // event.preventDefault();
+
+        const toSave = {
+            product: currentObj.name,
+            firstName: event.firstName,
+            lastName: event.lastName,
+            email: event.email,
+            demo: (event.demo === "") ? demo : event.demo,
+            phoneNumber: event.phoneNumber,
+            state: event.state,
+            zip: event.zip,
+            answer1: answer1,
+            answer2: answer2,
+            answer3: answer3,
+        };
+        console.log("submitting form: ", toSave);
+        LeadsAPI.saveLead(toSave).then(res => {
+            console.log("lead saved: " + res.data);
+
+        })
+    }
+
+
     const renderSwitch = () => {
         switch (step) {
             case 1:
-                console.log("mic check mic check");
+                // console.log("mic check mic check");
                 return <ProductForm
                     radioH={radioH}
                     radioI={radioI}
@@ -144,7 +185,7 @@ const ProductSurvey = props => {
 
                 />;
             case 2:
-                console.log("mic check mic check2");
+                // console.log("mic check mic check2");
                 return <ProductForm
                     radioH={radioH}
                     radioI={radioI}
@@ -162,7 +203,7 @@ const ProductSurvey = props => {
 
                 />;
             case 3:
-                console.log("mic check mic check3");
+                // console.log("mic check mic check3");
                 return <ProductForm
                     radioH={radioH}
                     radioI={radioI}
@@ -185,6 +226,29 @@ const ProductSurvey = props => {
                     answer1={answer1}
                     answer2={answer2}
                     answer3={answer3}
+                    // firstName={firstName}
+                    // lastName={lastName}
+                    // email={email}
+                    // demo={demo}
+                    // phoneNumber={phoneNumber}
+                    // state={state}
+                    // zip={zip}
+                    submitForms={submitForms}
+                />;
+            default: 
+                return <ProductForm
+                    radioH={radioH}
+                    radioI={radioI}
+                    radioQ={radioQ}
+                    currentObj={currentObj}
+                    updateCount={updateCount}
+                    renderButton={renderButton}
+                    backStep={backStep}
+                    checkAnswer={checkAnswer}
+                    answer1={answer1}
+                    answer2={answer2}
+                    answer3={answer3}
+                    step={step}
                 />;
         }
     }

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const leadSchema = new Schema({
+const LeadSchema = new Schema({
     firstName: {
         type: String,
         required: [true, "Must provide your first name"],
@@ -23,21 +23,21 @@ const leadSchema = new Schema({
         required: [true, "Must provide an email"],
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
+    demo: { type: Boolean, default: false },
     phoneNumber: {
         type: Number
     },
-    city: { type: String },
     state: { type: String },
     zipCode: { type: String },
-    industry: {
-        type: String
-    },
-    demo: { type: Boolean, default: false },
+    industry: { type: String },
+    misc2: { type: String },
+    misc3: { type: String },
+    product: { type: String },
     date: { type: Date, default: Date.now},
     
     
 });
 
-const Leads = mongoose.model("Leads", leadSchema);
+const Leads = mongoose.model("Leads", LeadSchema);
 
 module.exports = Leads;
