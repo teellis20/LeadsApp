@@ -23,7 +23,7 @@ const LeadSchema = new Schema({
         required: [true, "Must provide an email"],
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
-    demo: { type: Boolean, default: false },
+    demo: { type: String },
     phoneNumber: {
         type: Number
     },
