@@ -1,5 +1,5 @@
 {
-  "name": "leadsapp",
+  "name": "leads-app",
   "version": "1.0.0",
   "description": "Deployed site https://leads-w-cte.herokuapp.com/",
   "main": "server.js",
