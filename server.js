@@ -45,12 +45,12 @@ mongoose.connection.on('error',()=>{
     
         });
 // Start the API server
-// app.listen(PORT, function() {
-//   console.log(`API Server now listening on PORT ${PORT}`);
-// });
+app.listen(PORT, function() {
+  console.log(`API Server now listening on PORT ${PORT}`);
+});
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(_dirname, "client", "build", "index.html"));
 });
 
-server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+// server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
