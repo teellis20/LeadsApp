@@ -20,7 +20,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/leadsApp" || "mongodb://heroku_4w9bh03q:9ubovg67gtpq7cp6lame40j5jh@ds133311.mlab.com:33311/heroku_4w9bh03q",
+  process.env.MONGODB_URI || "mongodb://localhost/leadsApp",
   {
     useNewUrlParser: true,
     useCreateIndex: true,
