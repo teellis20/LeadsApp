@@ -7,6 +7,9 @@ export default {
     },
     deleteLead: function(email) {
         return axios.delete("/api/leads/" + email)
+    },
+    getLeads: function() {
+        return axios.get("/api/leads");
     }
 }
 

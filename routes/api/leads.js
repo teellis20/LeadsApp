@@ -4,6 +4,7 @@ const leadController = require("../../controllers/leadController");
 router
     .route("/")
     .post(leadController.create)
+    .get(leadController.findAll);
 
 router
     .route("/:email")
