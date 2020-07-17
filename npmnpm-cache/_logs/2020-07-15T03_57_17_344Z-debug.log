@@ -1,0 +1,22 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\Taylor\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start'
+1 verbose cli ]
+2 info using npm@6.13.7
+3 info using node@v12.18.2
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle leads-app@1.0.0~prestart: leads-app@1.0.0
+6 info lifecycle leads-app@1.0.0~start: leads-app@1.0.0
+7 verbose lifecycle leads-app@1.0.0~start: unsafe-perm in lifecycle true
+8 verbose lifecycle leads-app@1.0.0~start: PATH: C:\Users\Taylor\AppData\Roaming\npm\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;C:\Users\Taylor\Documents\Coding\Leads\LeadsApp\node_modules\.bin;C:\Users\Taylor\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Taylor\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs;C:\Users\Taylor\AppData\Local\Microsoft\WindowsApps;C:\Users\Taylor\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\Taylor\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+9 verbose lifecycle leads-app@1.0.0~start: CWD: C:\Users\Taylor\Documents\Coding\Leads\LeadsApp
+10 silly lifecycle leads-app@1.0.0~start: Args: [
+10 silly lifecycle   '/d /s /c',
+10 silly lifecycle   'if-env NODE_ENV=production && npm run start:prod || npm run start:dev'
+10 silly lifecycle ]
+11 timing npm Completed in 6252473ms
+12 error cb() never called!
+13 error This is an error with npm itself. Please report this error at:
+14 error <https://npm.community>
