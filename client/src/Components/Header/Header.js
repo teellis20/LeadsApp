@@ -20,9 +20,9 @@ const Header = props => {
 
     const SearchDropDown = () => {
         return (
-            <div 
-            // style={searchStyle.search}
-            className={searchClass}
+            <div
+                // style={searchStyle.search}
+                className={searchClass}
             >
                 <CardPanel id="searchCard">
                     <TextInput id="searchInput"
@@ -31,8 +31,8 @@ const Header = props => {
                     <Button id="searchBttn"
                         waves="light"
                     >
-                 <Icon id="searchRight">search</Icon>
-                 </Button>
+                        <Icon id="searchRight">search</Icon>
+                    </Button>
                 </CardPanel>
             </div>
         )
@@ -78,6 +78,9 @@ const Header = props => {
                     centerLogo: true
                 }}
             >
+                <NavItem href={props.testLink}>
+                    Test
+            </NavItem>
                 <NavItem href={props.partnerLink}>
                     Partners
             </NavItem>
@@ -93,7 +96,7 @@ const Header = props => {
             <Animated
                 animationIn="bounceInRight" animationOut="zoomOut" isVisible={searchDrop} animationInDuration={500} animationOutDuration={500}
             >
-            <SearchDropDown />
+                <SearchDropDown />
             </Animated>
         </div>
     )

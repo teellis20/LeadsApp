@@ -12,7 +12,8 @@ const Main = props => {
         <div className="body">
             <div id="content-wrap">
             <Header
-                partnerLink={"#hero-image"}
+                testLink={"/test"}
+                partnerLink={"/partners"}
                 productLink={"#productHome"}
             />
             <HowTo />

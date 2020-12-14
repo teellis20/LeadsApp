@@ -28,7 +28,10 @@ const MyRadio = ({ ...props }) => {
 
 const MyTextInput = ({ label, type, ...props }) => {
   const [field, meta] = useField(props);
-  return <TextInput className="validate" type={type} label={label} {...field} validate error={meta.error} />
+  const errorText = meta.error && meta.touched ? meta.error : "";
+  const classValid = meta.error && meta.touched ? "invalid" : "";
+
+  return <TextInput {...field} error={errorText} label={label}  id={props.name} validate className={classValid}/>
 };
 
 

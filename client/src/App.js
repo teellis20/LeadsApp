@@ -5,6 +5,7 @@ import Main from "./pages/Main/Main";
 import ProductSurvey from "./pages/ProductSurvey/ProductSurvey";
 
 import PartnerPage from "./Components/PartnerPage/PartnerPage";
+import TestPage from "./Components/Test/Test";
 
 function App() {
 
@@ -22,6 +23,11 @@ function App() {
             exact
             path="/partners"
             component={PartnerPage}
+            />
+          <Route
+            exact
+            path="/test"
+            component={TestPage}
             />
         </Switch>
       </Router>
