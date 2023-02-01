@@ -8,7 +8,7 @@
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "materialize-css": "^1.0.0",
-    "mongoose": "^5.11.5",
+    "mongoose": "^5.13.15",
     "react-animated-css": "^1.2.1",
     "react-materialize": "^3.9.3",
     "react-router-dom": "^5.2.0"
